@@ -42,6 +42,21 @@ function queryProducts() {
             }
         ])
         .then(function(answer) {
+            var chosenItem = [];
+            for (var i = 0; i < res[i].length; i++) {
+                if(res[i].item_id === answer.choice) {
+                    chosenItem = res[i];
+                }
+                if(chosenItem.stock_quantity < parseInt(answer.quantity)) {
+                    connection.query(
+                        "UPDATE bamazon SET ? WHERE ?",
+                        [
+                            
+                        ]
+
+                    )
+                }
+            }
             
         })
     });
